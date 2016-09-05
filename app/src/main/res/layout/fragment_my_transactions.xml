@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="65dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="My Transactions"
+        android:textColor="@color/mainTextColor"
+        android:layout_gravity="center"
+        android:id="@+id/textView30"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:layout_below="@+id/textView30"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scrollbars="vertical"
+        android:layout_weight="1.00" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:onClick="btnBack_Click"
+        android:text="Back"
+        android:textColor="#161719"
+        android:background="#facd36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</LinearLayout>

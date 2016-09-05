@@ -1,0 +1,149 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="65dp">
+
+    <TextView
+        android:id="@+id/textView24"
+        android:text="Post a Booking"
+        android:textColor="@color/mainTextColor"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:text="Pickup Point:"
+        android:textColor="@color/mainTextColor"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView_"
+        android:hint="Please enter your pickup point"
+        android:textColorHint="@color/hintColor"
+        android:textColor="@color/mainTextColor"
+        android:layout_marginLeft="10dp"
+        android:ems="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <TextView
+        android:id="@+id/textView27"
+        android:text="Drop-off Point:"
+        android:textColor="@color/mainTextColor"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1_"
+        android:hint="Please enter your drop off point"
+        android:ems="10"
+        android:textColorHint="@color/hintColor"
+        android:textColor="@color/mainTextColor"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </AutoCompleteTextView>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:text="Remarks:"
+        android:textColor="@color/mainTextColor"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/txtRemarks"
+        android:textColor="@color/mainTextColor"
+        android:hint="Remarks"
+        android:ems="10"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Tip"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:paddingRight="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/mainTextColor"
+            android:ems="10"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/txtTip"
+            android:layout_weight="1"
+            android:hint="Minimum of 100 (optional)"
+            android:textColorHint="@color/hintColor"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferred Taxi Operator:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:padding="18dp"
+            android:scrollbarSize="2dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center|bottom"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSendReq_"
+            android:text="Post"
+            android:textStyle="bold"
+            android:textColor="#161719"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"  />
+    </LinearLayout>
+</LinearLayout>

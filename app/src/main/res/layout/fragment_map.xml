@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.isure.viahero.bookacab.mFragments.MapFragment"
+    android:layout_marginTop="65dp"
+    >
+
+
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--&gt;-->
+    <!--</android.support.design.widget.TextInputLayout>-->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+         android:background= "#99FFFFFF">
+            <Button
+                android:id="@+id/btnSendReq"
+                android:text="Post"
+                android:textStyle="bold"
+                android:textColor="#161719"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:hint="Please enter your pickup point"
+                    android:textColorHint="@color/hintColor"
+                    android:textColor="@color/mainTextColor"
+                    android:layout_marginLeft="1dp"
+                    android:ems="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp">
+                    <requestFocus />
+                </AutoCompleteTextView>
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView1"
+                    android:hint="Please enter your drop off point"
+                    android:ems="10"
+                    android:textColorHint="@color/hintColor"
+                    android:textColor="@color/mainTextColor"
+                    android:layout_marginLeft="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp">
+                </AutoCompleteTextView>
+                <EditText
+                    android:id="@+id/txtRemarks"
+                    android:textColor="@color/mainTextColor"
+                    android:hint="Remarks (Optional)"
+                    android:ems="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textSize="15dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/txtTip"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/mainTextColor"
+                        android:ems="10"
+                        android:textSize="15dp"
+                        android:hint="Tip (Optional)"
+                        android:textColorHint="@color/hintColor"
+                        android:layout_marginRight="5dp"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:padding="18dp"
+                        android:scrollbarSize="2dp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--<fragment-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:map="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/map"-->
+        <!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="65dp"/>-->
+</RelativeLayout>

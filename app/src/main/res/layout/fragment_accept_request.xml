@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="65dp">
+
+    <TextView
+        android:id="@+id/textView25"
+        android:text="Requests from Drivers"
+        android:textColor="@color/mainTextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/listView2"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<Button-->
+            <!--android:id="@+id/btnBack"-->
+            <!--android:onClick="btnBack_Click"-->
+            <!--android:text="Back"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#facd36"-->
+            <!--android:textColor="@color/mainTextColor"-->
+            <!--android:textStyle="bold"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:padding="16dp"-->
+            <!---->
+            <!--android:letterSpacing="0.2"/>-->
+    <!--</LinearLayout>-->
+
+
+</LinearLayout>

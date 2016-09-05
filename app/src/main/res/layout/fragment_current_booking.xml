@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/scrollView">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="65dp">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:text="Current Booking"
+            android:textStyle="bold"
+            android:textColor="@color/mainTextColor"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:text="Operator name:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtOperatorName"
+            android:textColor="@color/detailTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/textView18"
+            android:text="Driver name:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtDriverName"
+            android:textColor="@color/detailTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:text="Plate No.:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtPlateNo"
+            android:textColor="@color/detailTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/textView19"
+            android:text="Pick up point:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtPick"
+            android:textColor="@color/detailTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:text="Drop off point:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtDrop"
+            android:textColor="@color/detailTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:text="Remarks:"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtRemarks"
+            android:textColor="@color/mainTextColor"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+
+            <Button
+                android:id="@+id/btnView"
+                android:onClick="btnView_Click"
+                android:text="View on Map"
+                android:textStyle="bold"
+                android:background="#facd36"
+                android:textColor="@color/mainTextColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+
+            <Button
+                android:id="@+id/btnCall"
+                android:onClick="btnCall_Click"
+                android:text="Call Driver"
+                android:textStyle="bold"
+                android:background="#facd36"
+                android:textColor="@color/mainTextColor"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSend"
+                android:onClick="btnSend_Click"
+                android:text="Send Message"
+                android:textStyle="bold"
+                android:background="#facd36"
+                android:textColor="@color/mainTextColor"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="fill_parent">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btnBack"-->
+                <!--android:onClick="btnBack_Click"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Back"-->
+                <!--android:textStyle="bold"-->
+                <!--android:background="#facd36"-->
+                <!--android:textColor="@color/mainTextColor"-->
+                <!--android:nestedScrollingEnabled="true"-->
+                <!--android:layout_marginTop="10dp"/>-->
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+</ScrollView>
