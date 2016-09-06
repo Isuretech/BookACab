@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.BooleanResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
@@ -239,9 +240,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
                         public void onGetPassengerInfoSuccess(PassengerInfo result) {
                         }
                         @Override
-                        public void onSuccess() {
+                        public void onSuccess(int response) {
                             Toast.makeText(getContext(),"Booking request posted!",Toast.LENGTH_SHORT).show();
-
                             scheduleTaskExecutor = Executors.newScheduledThreadPool(5);
                             scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
                                 @Override
@@ -252,11 +252,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback,
 
                                         }
                                         @Override
-                                        public void onSuccess() {
+                                        public void onSuccess(int response) {
                                             //condition here if the return value is not null
                                             //scheduleTaskExecutor.shutdown();
-                                            Toast.makeText(getContext(),"Ok",Toast.LENGTH_SHORT).show();
-
+                                            Toast.makeText(getContext(),response,Toast.LENGTH_SHORT).show();
+                                            if(response == 1 ){
+                                                Toast.makeText(getContext(),"We have booked you a cab!",Toast.LENGTH_SHORT).show();
+                                                scheduleTaskExecutor.shutdown();
+                                            }
                                         }
                                         @Override
                                         public void onGetDriverInfoSuccess(DriverInfo result) {

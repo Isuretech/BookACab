@@ -7,7 +7,7 @@ import com.isure.viahero.bookacab.BusinessObjects.PassengerInfo;
  */
 public interface VolleyCallback {
     void onGetPassengerInfoSuccess(PassengerInfo result);
-    void onSuccess();
+    void onSuccess(int response);
     void onGetDriverInfoSuccess(DriverInfo result);
     void onErrorResponse(String error);
 }

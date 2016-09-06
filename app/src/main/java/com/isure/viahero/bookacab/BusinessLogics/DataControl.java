@@ -99,7 +99,7 @@ public class DataControl {
                 JSONObject extractedJSON = extractJSON(response);
                 try {
                     //callback.onSuccess(extractedJSON.getString(config.KEY_USER).toString(),extractedJSON.getString(config.KEY_PASS).toString());
-                    callback.onSuccess();
+                    callback.onSuccess(1);
 //                } catch (JSONException e) {
 //                    e.printStackTrace();
                 }catch (Exception ex){
@@ -117,21 +117,26 @@ public class DataControl {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(stringRequest);
     }
-    public void postAcceptRequest(Context context, String _passengerID,final VolleyCallback callback){
+    public void postAcceptRequest(final Context context, String _passengerID,final VolleyCallback callback){
         url = null;
         url = (config.DATA_URL + "action=accept&PID="+ _passengerID).replace(" ","%20");
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>(){
             @Override
             public void onResponse(String response){
-                callback.onSuccess();
+                JSONObject extractedJSON = extractJSON(response);
+                try {
+                    callback.onSuccess(Integer.valueOf(extractedJSON.getString("response").trim()));
+                } catch (Exception ex) {
+                    Toast.makeText(context,ex.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                }
+                //callback.onSuccess();
             }
-
         },
                 new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error){
-                        callback.onErrorResponse(error.getMessage());
+                        callback.onErrorResponse(error.getLocalizedMessage());
                     }
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(context);

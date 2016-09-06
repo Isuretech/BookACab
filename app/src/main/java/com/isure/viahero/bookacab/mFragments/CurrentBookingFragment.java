@@ -3,9 +3,11 @@ package com.isure.viahero.bookacab.mFragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +17,13 @@ import com.isure.viahero.bookacab.BusinessLogics.VolleyCallback;
 import com.isure.viahero.bookacab.BusinessObjects.DriverInfo;
 import com.isure.viahero.bookacab.BusinessObjects.PassengerInfo;
 import com.isure.viahero.bookacab.R;
+import com.isure.viahero.bookacab.vhMethods.vhCommunication;
 import com.isure.viahero.bookacab.vhTasks.vhTasks;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CurrentBookingFragment extends Fragment{
+public class CurrentBookingFragment extends Fragment implements View.OnClickListener{
     View rootView;
     TextView txtOperatorName;
     TextView txtDriverName;
@@ -28,8 +31,9 @@ public class CurrentBookingFragment extends Fragment{
     TextView txtPick;
     TextView txtDrop;
     TextView txtRemarks;
+    Button btnCall,btnSendText;
 
-
+    DriverInfo driverInfo= new DriverInfo();
     PassengerInfo passengerInfo;
     //final DriverInfo[] _driverInfo = new DriverInfo[1];
 
@@ -43,6 +47,11 @@ public class CurrentBookingFragment extends Fragment{
         txtPick= (TextView) rootView.findViewById(R.id.txtPick);
         txtDrop= (TextView) rootView.findViewById(R.id.txtDrop);
         txtRemarks= (TextView) rootView.findViewById(R.id.txtRemarks);
+        btnCall= (Button) rootView.findViewById(R.id.btnCall);
+        btnSendText=(Button)rootView.findViewById(R.id.btnSend);
+
+        btnCall.setOnClickListener(this);
+        btnSendText.setOnClickListener(this);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +67,7 @@ public class CurrentBookingFragment extends Fragment{
             }
 
             @Override
-            public void onSuccess() {
+            public void onSuccess(int response) {
 
             }
 
@@ -70,7 +79,7 @@ public class CurrentBookingFragment extends Fragment{
                 txtPick.setText(result.get_pickupPoint());
                 txtDrop.setText(result.get_destination());
                 txtRemarks.setText(result.get_remarks());
-
+                driverInfo = result;
             }
 
             @Override
@@ -91,5 +100,23 @@ public class CurrentBookingFragment extends Fragment{
 //        });
 //        mCurrentTrip.execute(passengerInfo);
         return rootView;
+    }
+
+    @Override
+    public void onClick(View v) {
+        vhCommunication communicate = new vhCommunication();
+        if(TextUtils.isEmpty(driverInfo.get_contactNumber())){
+            Toast.makeText(getContext(),"Driver doesn't have contact number",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        switch (v.getId()){
+            case R.id.btnCall:
+                startActivity(communicate.CallNumber(driverInfo.get_contactNumber()));
+                break;
+            case R.id.btnSend:
+                startActivity(communicate.TextNumber(driverInfo.get_contactNumber()));
+                break;
+        }
     }
 }

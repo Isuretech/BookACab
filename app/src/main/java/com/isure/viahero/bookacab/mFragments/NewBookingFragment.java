@@ -41,6 +41,9 @@ import com.isure.viahero.bookacab.vhMethods.PlaceArrayAdapter;
 import com.isure.viahero.bookacab.vhMethods.vhLocate;
 
 import java.util.Locale;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class NewBookingFragment extends Fragment implements
         GoogleApiClient.OnConnectionFailedListener,
@@ -64,6 +67,7 @@ public class NewBookingFragment extends Fragment implements
     PassengerInfo _passengerInfo;
     View rootView;
     Button btnSendReq;
+    private ScheduledExecutorService scheduleTaskExecutor;
 
     public NewBookingFragment(PassengerInfo passengerInfo) {
         // Required empty public constructor
@@ -196,7 +200,7 @@ public class NewBookingFragment extends Fragment implements
     @Override
     public void onClick(View v){
         try{
-            DataControl dataControl = new DataControl();
+            final DataControl dataControl = new DataControl();
             switch (v.getId()){
                 case R.id.btnSendReq:
                     _passengerInfo.set_remarks(txtRemarks.getText().toString().trim());
@@ -207,8 +211,41 @@ public class NewBookingFragment extends Fragment implements
                         }
 
                         @Override
-                        public void onSuccess() {
+                        public void onSuccess(int response) {
                             Toast.makeText(getContext(),"Booking request sent!",Toast.LENGTH_SHORT).show();
+//                            scheduleTaskExecutor = Executors.newScheduledThreadPool(5);
+//                            scheduleTaskExecutor.scheduleAtFixedRate(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    dataControl.postAcceptRequest(getContext(), _passengerInfo.get_passengerId(), new VolleyCallback() {
+//                                        @Override
+//                                        public void onGetPassengerInfoSuccess(PassengerInfo result) {
+//
+//                                        }
+//
+//                                        @Override
+//                                        public void onSuccess(int response) {
+//                                            Toast.makeText(getContext(),"Ok",Toast.LENGTH_SHORT).show();
+//                                        }
+//
+//                                        @Override
+//                                        public void onGetDriverInfoSuccess(DriverInfo result) {
+//
+//                                        }
+//
+//                                        @Override
+//                                        public void onErrorResponse(String error) {
+//                                            Toast.makeText(getContext(),error,Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    });
+////                                    runOnUiThread(new Runnable() {
+////                                        @Override
+////                                        public void run() {
+////                                            //for testing
+////                                        }
+////                                    });
+//                                }
+//                            },0,30, TimeUnit.SECONDS);
                         }
 
                         @Override

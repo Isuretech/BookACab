@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements
             }
 
             @Override
-            public void onSuccess() {
+            public void onSuccess(int response) {
 
             }
 
@@ -86,8 +86,10 @@ public class MainActivity extends AppCompatActivity implements
 //                    }
 //
 //                    @Override
-//                    public void onSuccess() {
-//                        Toast.makeText(getApplication(),"Ok",Toast.LENGTH_SHORT).show();
+//                    public void onSuccess(int response) {
+//                        if(response == 1 ){
+//                            Toast.makeText(getApplication(),"Ok",Toast.LENGTH_SHORT).show();
+//                        }
 //                    }
 //
 //                    @Override
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-//        scheduleTaskExecutor.shutdown();
+        scheduleTaskExecutor.shutdown();
         finish();
     }
 
